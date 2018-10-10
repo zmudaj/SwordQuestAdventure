@@ -1,0 +1,102 @@
+/* Program Name: Sword Quest
+Author: Centaurus Team 1
+Date: October 9, 2018
+Description: Base Space class for all 25 spaces in the game
+*/
+
+#include "Space.hpp"
+#include <iostream>
+#include <vector>
+#include <string>
+#include <stdio.h>
+
+using namespace std;
+
+Space::Space()
+{
+	name = "No name";
+	shortForm = "";
+	longForm = "";
+	id = 0;
+	obj = NULL;
+	combatEncounter = false;
+	visited = false;
+}
+
+Space::~Space()
+{}
+
+string Space::getName()
+{
+	return name;
+}
+
+string Space::getShortForm()
+{
+	return shortForm;
+}
+
+string Space::getLongForm()
+{
+	return longForm;
+}
+
+int Space::getId()
+{
+	return id;
+}
+
+Space* Space::getNorth()
+{
+	return north;
+}
+
+Space* Space::getEast()
+{
+	return east;
+}
+
+Space* Space::getSouth()
+{
+	return south;
+}
+
+Space* Space::getWest()
+{
+	return west;
+}
+
+void Space::setDirections(Space* N, Space* E, Space* S, Space* W)
+{
+	north = N;
+	east = E;
+	south = S;
+	west = W;
+}
+
+bool Space::getEncounter()
+{
+	if (combatEncounter == false)
+	{
+		combatEncounter = true;
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
+bool Space::getVisited()
+{
+	if (visited == false)
+	{
+		visited = true;
+		return false;
+	}
+	else
+	{
+		return true;
+	}
+}
+
